@@ -12,7 +12,6 @@ const trades = (state = initial_state, action) => {
     case 'CONNECTED_TRADES':
       return {...state, connected_trades: true}
     case 'INITIAL_TRADES':
-      console.log("trades", action.payload)
       var baseMap = Map();
       for (var i = 0; i < action.payload.length; i++) {
         const time = action.payload[i][1];

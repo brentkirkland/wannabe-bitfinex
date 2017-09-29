@@ -1,0 +1,96 @@
+.App {
+  text-align: left;
+  background-color: #222;
+  color: white;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.Ticker-stat {
+  max-width: 300px;
+  border-bottom-style: dotted;
+  border-bottom-width: 1px;
+  border-bottom-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.OrderBook-main {
+  padding: 20px;
+  background-color: #222;
+}
+
+.OrderBook {
+  display: flex;
+  align-items: row;
+  background-color: #222;
+  justify-content: space-between;
+  color: white;
+  border-top-style: dotted;
+  border-top-color: white;
+  border-top-width: 1px;
+}
+
+.OrderBook-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  padding: 10px;
+}
+
+.OrderBook-wide {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.OrderBook-green {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  color: green;
+}
+
+.OrderBook-red {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  color: red;
+}
+
+.Websocket-switch {
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  width: 200px;
+  text-align: center;
+}
+
+.Websocket-switch:hover {
+  background-color: gray;
+  cursor: pointer;
+}

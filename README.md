@@ -18,6 +18,6 @@ yarn build
 ## Notes:
 Some room for improvement:
 * Handling various websocket response arrays. Don't understand what te, tu, hb, means.
-* Graph
+* Graph. Need more time to hack away at D3.
 * CSS is not perfectly matching Bitfinex. Function before beauty.
-* Hard coded to BTCUSD. Could easily be switched.
+* Hard coded to BTCUSD. Could easily be switched out for a select box.

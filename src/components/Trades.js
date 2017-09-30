@@ -15,7 +15,7 @@ class Trades extends Component {
   renderTrade (value) {
     if (value[1].amount > 0) {
       return (
-        <div key={this.convertToNiceTime(value[0])} className="OrderBook-green">
+        <div key={value[0]} className="OrderBook-green">
           <span>{this.convertToNiceTime(value[0])}</span>
           <span>{value[1].amount.toFixed(8)}</span>
           <span>{value[1].price.toFixed(2)}</span>

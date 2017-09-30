@@ -12,6 +12,7 @@
 .App-header {
   background-color: #222;
   padding: 20px;
+  padding-top: 60px;
   color: white;
 }
 
@@ -40,13 +41,17 @@
 
 .OrderBook {
   display: flex;
-  align-items: row;
+  flex-direction: row;
   background-color: #222;
   justify-content: space-between;
   color: white;
   border-top-style: dotted;
   border-top-color: white;
   border-top-width: 1px;
+
+}
+@media (max-width:500px) {
+  .OrderBook { flex-direction: column; }
 }
 
 .OrderBook-panel {
@@ -69,14 +74,36 @@
   display: flex;
   justify-content: space-between;
   flex: 1;
-  color: green;
+  color: #00ff00;
+  /*background-color: pink;*/
+  -webkit-animation-duration: 60s;animation-duration: 60s;
+            -webkit-animation-fill-mode: both;animation-fill-mode: both;
+  -webkit-animation-name: fadeOut;
 }
+
+@-webkit-keyframes fadeOut {
+            0% {opacity: 1;}
+            100% {opacity: 0.8;}
+         }
+
+         @keyframes fadeOut {
+            0% {opacity: 1;}
+            100% {opacity: 0.5;}
+         }
 
 .OrderBook-red {
   display: flex;
   justify-content: space-between;
   flex: 1;
-  color: red;
+  color: #ff1a1a;
+  -webkit-animation-duration: 60s;animation-duration: 60s;
+            -webkit-animation-fill-mode: both;animation-fill-mode: both;
+  -webkit-animation-name: fadeOut;
+}
+
+.fadeOut {
+   -webkit-animation-name: fadeOut;
+   animation-name: fadeOut;
 }
 
 .Websocket-switch {

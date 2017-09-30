@@ -4,7 +4,8 @@ const initial_state = {
   connected_book: false,
   bids: Map(),
   asks: Map(),
-  fetched: false
+  fetched: false,
+  count: 0
 }
 
 const book = (state = initial_state, action) => {

@@ -3,6 +3,7 @@ import VisibleOrderBook from '../containers/VisibleOrderBook'
 import VisibleTrades from '../containers/VisibleTrades'
 import VisibleTicker from '../containers/VisibleTicker'
 import PropTypes from 'prop-types'
+import FPSStats from  '../stats.js'
 import './App.css';
 
 class App extends Component {
@@ -12,7 +13,6 @@ class App extends Component {
   }
 
   connect () {
-    console.log('connecting')
     var msg;
     this.props.websocket.ws.onopen = () => {
       msg = {
@@ -44,9 +44,7 @@ class App extends Component {
 
     this.props.websocket.ws.onmessage = (e) => {
       // a message was received
-      console.log('message recieved')
       const parsedData = JSON.parse(e.data)
-      console.log(parsedData, parsedData.length);
 
       //TODO: Handle all events better. Figure out meaning of te, tu, hb...
 
@@ -106,9 +104,18 @@ class App extends Component {
     )
   }
 
+  renderStats () {
+    return (
+      <div style={{paddingLeft: '20px', paddingTop: '20px'}}>
+        <FPSStats />
+      </div>
+    );
+  }
+
   render() {
     return (
       <div className="App">
+        {this.renderStats()}
         <header className="App-header">
           <h1 className="App-title">WannaBe Bitfinex</h1>
           {this.killSwitch()}

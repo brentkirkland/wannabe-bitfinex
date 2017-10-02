@@ -19,7 +19,7 @@ class App extends Component {
         "event": "subscribe",
         "channel": "book",
         "symbol": "tETHBTC",
-        "prec": "P3",
+        "prec": "P2",
         "freq": "F1",
         "len": 25
       }

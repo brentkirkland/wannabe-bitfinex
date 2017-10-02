@@ -16,12 +16,12 @@ class OrderBook extends Component {
         var ratio = (total / absoluteTotal * 100).toFixed(0)
         var background_str = 'linear-gradient(to left, #354430 ' + ( ratio) + '%, #222 ' + 0 + '%)'
         return (
-          <div key={value[0] + 'b' + value[1]} className="OrderBook-green"
+          <div key={JSON.stringify(value[0]) + 'b' + JSON.stringify(value[2])} className="OrderBook-green"
             style={{background: background_str}}>
             <span>{value[1].toFixed(2)}</span>
             <span>{value[2].toFixed(8)}</span>
             <span>{total.toFixed(2)}</span>
-            <span>{value[0].toFixed(3)}</span>
+            <span>{value[0].toFixed(4)}</span>
           </div>
         )
       })
@@ -32,12 +32,12 @@ class OrderBook extends Component {
         var ratio = (total / absoluteTotal * 100).toFixed(0)
         var background_str = 'linear-gradient(to left, #222 ' + (100 - ratio) + '%, #472c2c ' + 0 + '%)'
         return (
-          <div key={value[0] + 'a' + value[1]} className="OrderBook-red"
+          <div key={JSON.stringify(value[0]) + 'a' + JSON.stringify(value[2])} className="OrderBook-red"
             style={{background: background_str}}>
             <span>{value[1].toFixed(2)}</span>
             <span>{(value[2] * -1).toFixed(8)}</span>
             <span>{total.toFixed(2)}</span>
-            <span>{value[0].toFixed(3)}</span>
+            <span>{value[0].toFixed(4)}</span>
           </div>
         )
       })

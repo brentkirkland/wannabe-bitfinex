@@ -54,7 +54,11 @@ const book = (state = initial_state, action) => {
         var stringify = JSON.stringify(price)
         var oldTotal;
         map = (amount > 0) ? state.bids : state.asks;
-        oldTotal = map.get(stringify)[2]
+        if (map.get(stringify) !== undefined) {
+          oldTotal = map.get(stringify)[2];
+        } else {
+          oldTotal = 0;
+        }
         map.delete(stringify)
         map.set(stringify, action.payload)
         total = (amount > 0) ? state.total_b : state.total_a;

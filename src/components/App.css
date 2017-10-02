@@ -91,19 +91,19 @@
   flex: 1;
   color: #00ff00;
   /*background-color: pink;*/
-  -webkit-animation-duration: 6000s;animation-duration: 6000s;
+  -webkit-animation-duration: 60s;animation-duration: 60s;
             -webkit-animation-fill-mode: both;animation-fill-mode: both;
   -webkit-animation-name: fadeOut;
 }
 
 @-webkit-keyframes fadeOut {
             0% {opacity: 1;}
-            100% {opacity: 0.8;}
+            100% {opacity: 0.5;}
          }
 
          @keyframes fadeOut {
             0% {opacity: 1;}
-            100% {opacity: 0.2;}
+            100% {opacity: 0.5;}
          }
 
 .OrderBook-red {
@@ -111,7 +111,7 @@
   justify-content: space-between;
   flex: 1;
   color: #ff1a1a;
-  -webkit-animation-duration: 6000s;animation-duration: 6000s;
+  -webkit-animation-duration: 60s;animation-duration: 60s;
             -webkit-animation-fill-mode: both;animation-fill-mode: both;
   -webkit-animation-name: fadeOut;
 }

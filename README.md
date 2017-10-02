@@ -20,10 +20,10 @@ yarn build
 
 ## Notes:
 * redux-logger is on. Open console to see Redux update.
+* Added correct data structures using Collections JS
 
 Some room for improvement:
 
 * Handling various websocket response arrays. Don't understand what te, tu, hb, means.
-* Graph. Need more time to hack away at D3.
 * CSS is not perfectly matching Bitfinex. Function before beauty.
-* Hard coded to BTCUSD. Could easily be switched out for a select box.
+* Hard coded to ETHBTC. Could easily be switched out for a select box.

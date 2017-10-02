@@ -13,26 +13,29 @@ class Trades extends Component {
   }
 
   renderTrade (value) {
-    if (value[1].amount > 0) {
+    if (value[2] > 0) {
       return (
-        <div key={value[0]} className="OrderBook-green">
-          <span>{this.convertToNiceTime(value[0])}</span>
-          <span>{value[1].amount.toFixed(8)}</span>
-          <span>{value[1].price.toFixed(2)}</span>
+        <div key={value[0]  + 'g'} className="OrderBook-green">
+          <span>{this.convertToNiceTime(value[1])}</span>
+          <span>{value[2].toFixed(8)}</span>
+          <span>{value[3].toFixed(2)}</span>
         </div>
       )
     }
     return (
-      <div key={value[0]} className="OrderBook-red">
-        <span>{this.convertToNiceTime(value[0])}</span>
-        <span>{(value[1].amount * -1).toFixed(8)}</span>
-        <span>{value[1].price.toFixed(2)}</span>
+      <div key={value[0] + 'r'} className="OrderBook-red">
+        <span>{this.convertToNiceTime(value[1])}</span>
+        <span>{(value[2] * -1).toFixed(8)}</span>
+        <span>{value[3].toFixed(2)}</span>
       </div>
     )
   }
 
   renderTrades () {
-    return this.props.trades.trades.entrySeq().map(this.renderTrade.bind(this))
+    if (this.props.trades.trades) {
+      return this.props.trades.trades.map(this.renderTrade.bind(this))
+    }
+    // return this.props.trades.trades.entrySeq().map(this.renderTrade.bind(this))
   }
 
   render() {

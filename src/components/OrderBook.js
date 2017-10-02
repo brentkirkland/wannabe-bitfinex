@@ -26,11 +26,11 @@ class OrderBook extends Component {
         // react is telling me that it is rendering two children
         //
         return (
-          <div key={value[0] + value[1]} className="OrderBook-green">
+          <div key={value[0] + 'b' + value[1].amount} className="OrderBook-green">
             <span>{value[1].count.toFixed(2)}</span>
             <span>{value[1].amount.toFixed(8)}</span>
             <span>{obj.total.toFixed(2)}</span>
-            <span>{value[0].toFixed(2)}</span>
+            <span>{value[0].toFixed(3)}</span>
           </div>
         )
       })
@@ -46,11 +46,11 @@ class OrderBook extends Component {
           obj.total += -1*value[1].amount
         }
         return (
-          <div key={value[0] + value[1]} className="OrderBook-red">
+          <div key={value[0] + 'a' + value[1].amount} className="OrderBook-red">
             <span>{value[1].count.toFixed(2)}</span>
             <span>{(value[1].amount * -1).toFixed(8)}</span>
             <span key={obj.total}>{obj.total.toFixed(2)}</span>
-            <span>{value[0].toFixed(2)}</span>
+            <span>{value[0].toFixed(3)}</span>
           </div>
         )
       })

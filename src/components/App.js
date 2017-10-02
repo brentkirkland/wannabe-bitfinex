@@ -18,8 +18,8 @@ class App extends Component {
       msg = {
         "event": "subscribe",
         "channel": "book",
-        "symbol": "tBTCUSD",
-        "prec": "P0",
+        "symbol": "tETHBTC",
+        "prec": "P3",
         "freq": "F1",
         "len": 25
       }
@@ -28,14 +28,14 @@ class App extends Component {
       msg = {
         "event": "subscribe",
         "channel": "trades",
-        "symbol": "tBTCUSD"
+        "symbol": "tETHBTC"
       }
       this.props.websocket.ws.send(JSON.stringify(msg))
 
       msg = {
         "event": "subscribe",
         "channel": "ticker",
-        "symbol": "tBTCUSD"
+        "symbol": "tETHBTC"
       }
 
       this.props.websocket.ws.send(JSON.stringify(msg))

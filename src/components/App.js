@@ -121,8 +121,10 @@ class App extends Component {
           {this.killSwitch()}
           <VisibleTicker/>
         </header>
-        <VisibleOrderBook/>
-        <VisibleTrades/>
+        <div className="App-wide">
+          <VisibleOrderBook/>
+          <VisibleTrades/>
+        </div>
       </div>
     );
   }

@@ -40,7 +40,7 @@ class Trades extends Component {
 
   render() {
     return (
-      <div className="OrderBook-main">
+      <div className="OrderBook-main-trades">
         <h3>Trades</h3>
         <div className="OrderBook">
           <div className="OrderBook-panel">

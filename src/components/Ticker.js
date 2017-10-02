@@ -9,7 +9,7 @@ class ticker extends Component {
       return (
         <div>
           <div>
-            <h3>ETHUSD</h3>
+            <h3>ETHBTC</h3>
           </div>
           <div className="Ticker-stat">
             <span>Bid</span>

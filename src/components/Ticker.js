@@ -4,13 +4,6 @@ import './App.css';
 
 class ticker extends Component {
 
-  handleChange () {
-    if (this.props.ticker.change < 0) {
-      return '-$' + -1*this.props.ticker.change
-    }
-    return '$' + this.props.ticker.change
-  }
-
   renderTicker() {
     if (this.props.ticker.fetched) {
       return (
@@ -28,7 +21,7 @@ class ticker extends Component {
           </div>
           <div  className="Ticker-stat">
             <span>24hr Change</span>
-            <span>{this.handleChange()}</span>
+            <span>{this.props.ticker.change}</span>
             <span>{this.props.ticker.change_percent.toFixed(2) + ' %'}</span>
           </div>
           <div  className="Ticker-stat">

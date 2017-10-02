@@ -18,7 +18,7 @@ class Trades extends Component {
         <div key={value[0]  + 'g'} className="OrderBook-green">
           <span>{this.convertToNiceTime(value[1])}</span>
           <span>{value[2].toFixed(8)}</span>
-          <span>{value[3].toFixed(2)}</span>
+          <span>{value[3].toFixed(6)}</span>
         </div>
       )
     }
@@ -26,7 +26,7 @@ class Trades extends Component {
       <div key={value[0] + 'r'} className="OrderBook-red">
         <span>{this.convertToNiceTime(value[1])}</span>
         <span>{(value[2] * -1).toFixed(8)}</span>
-        <span>{value[3].toFixed(2)}</span>
+        <span>{value[3].toFixed(6)}</span>
       </div>
     )
   }

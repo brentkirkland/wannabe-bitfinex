@@ -21,7 +21,7 @@ const ticker = (state = initial_state, action) => {
         vol: action.payload[7],
         change: action.payload[4],
         change_percent: action.payload[5] * 100,
-        bid: action.payload[2],
+        bid: action.payload[6],
         fetched: true
       }
     default:

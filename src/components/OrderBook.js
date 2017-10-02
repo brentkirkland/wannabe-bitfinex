@@ -5,51 +5,38 @@ import './App.css';
 class OrderBook extends Component {
 
   renderBids(boo) {
-    // eslint-disable-next-line
-    var obj;
-    var some = {};
+    var total;
+    var absoluteTotalA = this.props.book.total_a;
+    var absoluteTotalB = this.props.book.total_b;
+    var absoluteTotal = absoluteTotalB - absoluteTotalA;
     if (boo) {
-      obj = {
-        total: 0,
-        count: 0
-      }
-      return this.props.book.bids.entrySeq().map(function(value) {
-        // I am well aware how hacky this is
-        // Immutable.js like to render this 3 times!! crazy
-        // would not recommend immutable headaches
-        obj.count += 1;
-        if (some[value[0]]=== undefined && obj.count > 50) {
-          some[value[0]] = 1;
-          obj.total += value[1].amount
-        }
-
-        // react is telling me that it is rendering two children
-        //
+      total = 0;
+      return this.props.book.bids.map(function(value) {
+        total += value[2]
+        var ratio = (total / absoluteTotal * 100).toFixed(0)
+        var background_str = 'linear-gradient(to left, #354430 ' + ( ratio) + '%, #222 ' + 0 + '%)'
         return (
-          <div key={value[0] + 'b' + value[1].amount} className="OrderBook-green">
-            <span>{value[1].count.toFixed(2)}</span>
-            <span>{value[1].amount.toFixed(8)}</span>
-            <span>{obj.total.toFixed(2)}</span>
+          <div key={value[0] + 'b' + value[1]} className="OrderBook-green"
+            style={{background: background_str}}>
+            <span>{value[1].toFixed(2)}</span>
+            <span>{value[2].toFixed(8)}</span>
+            <span>{total.toFixed(2)}</span>
             <span>{value[0].toFixed(3)}</span>
           </div>
         )
       })
     } else {
-      obj = {
-        total: 0,
-        count: 0
-      }
-      return this.props.book.asks.entrySeq().map(function(value) {
-        obj.count += 1;
-        if (some[value[0]]=== undefined && obj.count > 50) {
-          some[value[0]] = 1;
-          obj.total += -1*value[1].amount
-        }
+      total = 0;
+      return this.props.book.asks.map(function(value) {
+        total += -1*value[2]
+        var ratio = (total / absoluteTotal * 100).toFixed(0)
+        var background_str = 'linear-gradient(to left, #222 ' + (100 - ratio) + '%, #472c2c ' + 0 + '%)'
         return (
-          <div key={value[0] + 'a' + value[1].amount} className="OrderBook-red">
-            <span>{value[1].count.toFixed(2)}</span>
-            <span>{(value[1].amount * -1).toFixed(8)}</span>
-            <span key={obj.total}>{obj.total.toFixed(2)}</span>
+          <div key={value[0] + 'a' + value[1]} className="OrderBook-red"
+            style={{background: background_str}}>
+            <span>{value[1].toFixed(2)}</span>
+            <span>{(value[2] * -1).toFixed(8)}</span>
+            <span>{total.toFixed(2)}</span>
             <span>{value[0].toFixed(3)}</span>
           </div>
         )

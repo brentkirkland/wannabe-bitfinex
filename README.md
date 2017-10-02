@@ -3,7 +3,7 @@
 NOTE: Project updated to more easily see renders. Also includes FPS meter.
 I wanted to verify and study the stats across different devices.
 
-![Looks](/img/img.jpg?raw=true "WannaBe-Bitfinex")
+![Looks](/img/img.png?raw=true "WannaBe-Bitfinex")
 
 # To Run:
 

@@ -44,6 +44,11 @@ class Trades extends Component {
         <h3>Trades</h3>
         <div className="OrderBook">
           <div className="OrderBook-panel">
+            <div className="OrderBook-wide">
+              <span>{"Time"}</span>
+              <span>{"Amount"}</span>
+              <span>{"Price"}</span>
+            </div>
             {this.renderTrades()}
           </div>
         </div>
